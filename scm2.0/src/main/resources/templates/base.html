@@ -1,14 +1,30 @@
-<div th:fragment="parent(x,y)">
-    <h2>This is parent fragment</h2>
-    <h2> value of X is : <span data-th-text="${x}"></span></h2>
-    <h2> value of Y is : <span data-th-text="${y}"></span></h2>
+<!doctype html>
+<html lang="en" th:fragment="parent(content,title,script)" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-replace="${title}">SCM</title>
+</head>
+<body>
+<ul>
+    <li>
+        <a data-th-href="@{'/home}">Home</a>
+    </li>
+    <li>
+        <a data-th-href="@{'/about}">About</a>
+    </li>
+    <li>
+        <a data-th-href="@{'/service}">Service</a>
+    </li>
+</ul>
 
-</div>
 
-<div th:fragment="hello(content)">
-    <h2>Hello How are you</h2>
-    <div th:replace="${content}">
+<section data-th-replace="${script}"></section>
+<section data-th-replace="${content}"></section>
 
-    </div>
+<footer class="p-4"> Learn code with Ansar</footer>
 
-</div>
+</body>
+</html>
