@@ -15,4 +15,18 @@ public class PageController {
         System.out.println("Home page controller...");
         return "home";
     }
+
+    @RequestMapping("/about")
+    public String aboutPage(){
+        System.out.println("About page loding ..........");
+        return "about";
+
+    }
+
+    @RequestMapping("/service")
+    public String servicePage(){
+        System.out.println("Service page loding ..........");
+        return "service";
+
+    }
 }

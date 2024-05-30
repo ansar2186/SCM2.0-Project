@@ -6,13 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" data-th-href="@{'/output.css'}">
+    <style>
+        .container {
+        margin:auto;
+        padding:30px;
+        background:#e2e2e2;
+        }
+
+
+    </style>
 </head>
 <body>
-<div class="">
-    <h2 data-th-text="${name}">Welcome to my home page !!</h2>
+<div class="text-3xl font-bold underline">
+    <h4 class="text-2 font-italic" data-th-text="${name}">Welcome to my home page !!</h4>
     <p>Address :<span data-th-text="${address}"></span></p>
     <a data-th-href="${link}">Click here </a>
     <h1>Welcome to my Home page: <span data-th-text="${name}"></span></h1>
+    <h2>hello</h2>
+    <h4>hi</h4>
 
 
 </div>
