@@ -29,4 +29,21 @@ public class PageController {
         return "service";
 
     }
+    @RequestMapping("/contact")
+    public String contactPage(){
+        System.out.println("Contact page loding ..........");
+        return "contact";
+    }
+
+    @RequestMapping("/login")
+    public String loginPage(){
+        System.out.println("login page loding ..........");
+        return "login";
+    }
+
+    @RequestMapping("/signup")
+    public String signupPage(){
+        System.out.println("signup page loding ..........");
+        return "signup";
+    }
 }

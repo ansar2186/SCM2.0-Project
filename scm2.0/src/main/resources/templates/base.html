@@ -6,25 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title data-th-replace="${title}">SCM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 </head>
 <body>
-<ul>
-    <li>
-        <a data-th-href="@{'/home}">Home</a>
-    </li>
-    <li>
-        <a data-th-href="@{'/about}">About</a>
-    </li>
-    <li>
-        <a data-th-href="@{'/service}">Service</a>
-    </li>
-</ul>
+<div data-th-replace="navbar :: navbar">
 
-
+</div>
 <section data-th-replace="${script}"></section>
 <section data-th-replace="${content}"></section>
 
 <footer class="p-4"> Learn code with Ansar</footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </body>
 </html>
