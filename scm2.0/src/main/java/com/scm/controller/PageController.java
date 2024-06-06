@@ -23,7 +23,7 @@ public class PageController {
 
     }
 
-    @RequestMapping("/service")
+    @RequestMapping("/services")
     public String servicePage(){
         System.out.println("Service page loding ..........");
         return "service";
