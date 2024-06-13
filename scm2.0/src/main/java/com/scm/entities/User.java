@@ -32,7 +32,8 @@ public class User {
     private boolean enabled = false;
     private boolean emailVerified = false;
     private boolean phoneVerified = false;
-    private Provider provide = Provider.SELF;
+    @Enumerated(value = EnumType.STRING)
+    private Provider provider = Provider.SELF;
     private String providerUserId;
     private Date createdDate;
     private Date updatedDate;
