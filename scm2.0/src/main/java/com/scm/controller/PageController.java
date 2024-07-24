@@ -62,7 +62,7 @@ public class PageController {
     public String signupPage(Model model) {
 
         UserForm userForm = new UserForm();
-        model.addAttribute("user", userForm);
+        model.addAttribute("userForm", userForm);
 
         return "signup";
     }
@@ -72,8 +72,13 @@ public class PageController {
      */
 
     @RequestMapping(value = "/do-register", method = RequestMethod.POST)
-    public String signupProcessing(@Valid @ModelAttribute UserForm userForm, HttpSession session, BindingResult bindingResult) {
-       /* User buildUser = User.builder()
+    public String signupProcessing(@Valid @ModelAttribute UserForm userForm, BindingResult bindingResult,HttpSession session) {
+        System.out.println("Processing registration");
+        // fetch form data
+        // UserForm
+        System.out.println(userForm);
+
+        /* User buildUser = User.builder()
                 .firstName(userForm.getFirstName())
                 .lastName(userForm.getLastName())
                 .email(userForm.getEmail())
@@ -97,7 +102,7 @@ public class PageController {
         user.setAbout(userForm.getAbout());
         userService.saveUser(user);
 
-        Message message = Message.builder().content("Registration is successfull").type(MessageType.GREEN).build();
+        Message message = Message.builder().content("Registration is successfully").type(MessageType.GREEN).build();
         session.setAttribute("message",message);
         return "redirect:/signup";
     }
