@@ -16,12 +16,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Date;
+import java.util.HashSet;
 
 @Controller
 public class PageController {
 
     @Autowired
     private UserService userService;
+
+    @RequestMapping("/")
+    public String index(){
+        return "redirect:/home";
+    }
 
     @RequestMapping("/home")
     public String home(Model model) {
