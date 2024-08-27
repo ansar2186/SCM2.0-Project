@@ -12,4 +12,6 @@ public interface UserService {
     boolean isUserExit(String userId);
     boolean isUserExitByEmail(String email);
     List<User> getAllUser();
+
+    User getUserByEmail(String email);
 }

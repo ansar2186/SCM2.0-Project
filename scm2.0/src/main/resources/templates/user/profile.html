@@ -9,5 +9,15 @@
 </head>
 <body>
 <h2>This is user Profile page !</h2>
+<h2 data-th-text="${loggedInUser.firstName}"></h2>
+<h2 data-th-text="${loggedInUser.email}"></h2>
+<h2 data-th-text="${loggedInUser.about}"></h2>
+<h2 data-th-text="${loggedInUser.phoneNumber}"></h2>
+
+<div th:if="${loggedInUser}">
+    <h3>User Login Successfully</h3>
+
+
+</div>
 </body>
 </html>

@@ -87,4 +87,10 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUser() {
         return userRepo.findAll();
     }
+
+    @Override
+    public User getUserByEmail(String email) {
+        Optional<User> byEmail = userRepo.findByEmail(email);
+        return userRepo.findByEmail(email).orElse(null);
+    }
 }
