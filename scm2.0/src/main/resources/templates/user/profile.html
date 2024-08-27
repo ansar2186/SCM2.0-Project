@@ -1,23 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title data-th-text="${loggedInUser.firstName}">Profile</title>
 </head>
 <body>
-<h2>This is user Profile page !</h2>
-<h2 data-th-text="${loggedInUser.firstName}"></h2>
-<h2 data-th-text="${loggedInUser.email}"></h2>
-<h2 data-th-text="${loggedInUser.about}"></h2>
-<h2 data-th-text="${loggedInUser.phoneNumber}"></h2>
 
-<div th:if="${loggedInUser}">
-    <h3>User Login Successfully</h3>
+<div id="content">
+    <h1>This is Profile page !!</h1>
 
+    <div data-th-if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+    </div>
+    <div class="pl-60 pt-20" style="height:1000px">
+        <div class="flex justify-center flex-col items-center">
+            <h1 class="text-5xl">Welcome to Profile Page !</h1>
+            <p> Learn Java with <span data-th-text="${loggedInUser.firstName}"></span></p>
+        </div>
+    </div>
+</div>
 
 </div>
+<script>
+    console.log("This is Profile Page")
+</script>
 </body>
 </html>

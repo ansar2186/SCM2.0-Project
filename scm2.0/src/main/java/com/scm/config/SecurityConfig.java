@@ -90,14 +90,15 @@ public class SecurityConfig {
 
 
         });
+
+        httpSecurity.oauth2Login(oauth->{
+            oauth.loginPage("/login");
+            oauth.successHandler(handler);
+        });
         httpSecurity.csrf(AbstractHttpConfigurer::disable);
         httpSecurity.logout(logoutForm -> {
             logoutForm.logoutUrl("/logout")
                     .logoutSuccessUrl("/login?logout=true");
-        });
-        httpSecurity.oauth2Login(oauth->{
-            oauth.loginPage("/login");
-            oauth.successHandler(handler);
         });
         return httpSecurity.build();
     }
